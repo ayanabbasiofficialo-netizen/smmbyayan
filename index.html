@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SMM BY AYAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 70px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+font-size:2rem;
+font-weight:800;
+color:#00d9ff;
+text-shadow:0 0 15px #00d9ff;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+cursor:pointer;
+}
+
+nav a:hover{
+color:#00d9ff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop')
+center/cover;
+}
+
+.hero-content{
+max-width:850px;
+animation:fadeIn 1.5s ease;
+}
+
+.hero h1{
+font-size:5rem;
+font-weight:800;
+margin-bottom:20px;
+line-height:1.1;
+}
+
+.hero h1 span{
+color:#00d9ff;
+text-shadow:0 0 25px #00d9ff;
+}
+
+.hero p{
+font-size:1.2rem;
+color:#ccc;
+line-height:1.8;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.primary{
+background:#00d9ff;
+color:#000;
+box-shadow:0 0 20px #00d9ff;
+}
+
+.primary:hover{
+transform:translateY(-5px);
+}
+
+.secondary{
+background:transparent;
+border:2px solid #00d9ff;
+color:white;
+}
+
+.secondary:hover{
+background:#00d9ff;
+color:black;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:80px 70px;
+background:#071122;
+}
+
+.stat-box{
+background:#0c1b31;
+padding:40px 25px;
+border-radius:20px;
+text-align:center;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(0,217,255,0.2);
+}
+
+.stat-box h2{
+font-size:3rem;
+color:#00d9ff;
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:#aaa;
+}
+
+/* SERVICES */
+
+.services{
+padding:100px 70px;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+}
+
+.section-title span{
+color:#00d9ff;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:#0c1325;
+padding:35px;
+border-radius:25px;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.service-card:hover{
+transform:translateY(-12px);
+box-shadow:0 15px 40px rgba(0,217,255,0.2);
+}
+
+.service-card h3{
+font-size:1.5rem;
+margin-bottom:15px;
+color:#00d9ff;
+}
+
+.service-card p{
+color:#bbb;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.price{
+font-size:1.2rem;
+font-weight:700;
+color:white;
+}
+
+/* PANEL */
+
+.panel{
+padding:100px 70px;
+background:#08111f;
+}
+
+.panel-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.panel-text h2{
+font-size:3rem;
+margin-bottom:25px;
+}
+
+.panel-text p{
+color:#bbb;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.panel-image img{
+width:100%;
+border-radius:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* CONTACT */
+
+.contact{
+padding:100px 70px;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:#0c1325;
+padding:40px;
+border-radius:25px;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
+padding:16px;
+margin-bottom:20px;
+background:#08111f;
+border:none;
+outline:none;
+border-radius:12px;
+color:white;
+}
+
+.contact-box button{
+width:100%;
+padding:16px;
+background:#00d9ff;
+border:none;
+border-radius:12px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-box button:hover{
+transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#888;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+padding:20px;
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.services,
+.stats,
+.panel,
+.contact{
+padding:80px 20px;
+}
+
+.panel-box{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="logo">SMM BY AYAN</div>
+
+<nav>
+<a onclick="scrollSection('services')">Services</a>
+<a onclick="scrollSection('panel')">Panel</a>
+<a onclick="scrollSection('contact')">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>WORLD CLASS <span>SMM PANEL</span></h1>
+
+<p>
+Boost your Instagram, TikTok, YouTube, Facebook and all social media platforms with premium quality services at unbeatable prices.
+</p>
+
+<div class="hero-buttons">
+<button class="btn primary" onclick="showMessage()">Get Started</button>
+<button class="btn secondary" onclick="scrollSection('services')">View Services</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>50K+</h2>
+<p>Orders Completed</p>
+</div>
+
+<div class="stat-box">
+<h2>10K+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Customer Support</p>
+</div>
+
+<div class="stat-box">
+<h2>99.9%</h2>
+<p>Fast Delivery</p>
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">OUR <span>SERVICES</span></h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Instagram Followers</h3>
+<p>High quality real Instagram followers with instant delivery.</p>
+<div class="price">Starting From $2</div>
+</div>
+
+<div class="service-card">
+<h3>YouTube Subscribers</h3>
+<p>Increase your YouTube channel growth and engagement.</p>
+<div class="price">Starting From $5</div>
+</div>
+
+<div class="service-card">
+<h3>TikTok Views</h3>
+<p>Boost your TikTok videos with millions of fast views.</p>
+<div class="price">Starting From $1</div>
+</div>
+
+<div class="service-card">
+<h3>Facebook Likes</h3>
+<p>Get real Facebook page likes and improve branding.</p>
+<div class="price">Starting From $3</div>
+</div>
+
+<div class="service-card">
+<h3>Spotify Plays</h3>
+<p>Increase your Spotify music streams organically.</p>
+<div class="price">Starting From $4</div>
+</div>
+
+<div class="service-card">
+<h3>Telegram Members</h3>
+<p>Grow your Telegram group and channel audience quickly.</p>
+<div class="price">Starting From $2</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PANEL -->
+
+<section class="panel" id="panel">
+
+<div class="panel-box">
+
+<div class="panel-text">
+
+<h2>Professional SMM Dashboard</h2>
+
+<p>
+SMM BY AYAN offers one of the fastest and most reliable social media marketing panels with premium automation and secure order processing.
+</p>
+
+<p>
+Easy ordering system, instant API support, user dashboard, live statistics and 24/7 customer support.
+</p>
+
+<button class="btn primary" onclick="showMessage()">Join Now</button>
+
+</div>
+
+<div class="panel-image">
+
+<img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">CONTACT <span>US</span></h2>
+
+<div class="contact-box">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button onclick="sendMessage()">Send Message</button>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>SMM BY AYAN © 2026</h2>
+
+<p>Premium Social Media Marketing Services</p>
+
+</footer>
+
+<script>
+
+function scrollSection(id){
+document.getElementById(id).scrollIntoView({
+behavior:'smooth'
+});
+}
+
+function showMessage(){
+alert("Welcome To SMM BY AYAN!");
+}
+
+function sendMessage(){
+alert("Your Message Has Been Sent Successfully!");
+}
+
+</script>
+
+</body>
+</html>
